@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Josefin_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Josefin_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 const josefin = Josefin_Sans({
   variable: '--font-josefin',
   subsets: ['latin'],
-  weight: ['100','200','300','400','500','600','700'],
-  style: ['normal', 'italic'],
+});
+
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${josefin.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${josefin.variable} ${roboto.variable} antialiased`}
       >
         {children}
       </body>
