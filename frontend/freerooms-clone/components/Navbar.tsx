@@ -1,12 +1,17 @@
+"use client"
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(true);
+
   return (
     <nav className="flex w-full h-16.5 px-4 py-3 justify-center items-center border-b border-[#000000]/10">
       <div className="flex w-full h-full justify-between">
         <div className="flex items-center font-bold text-[2rem] text-[#EF6C00] cursor-pointer hover:opacity-50 transition-all duration-200 ease-in-out">
-          <Image src="/assets/freeRoomsLogo.png" alt="Freerooms Logo" width={50} height={50} />
-          <span className="font-logo font-semibold">Freerooms</span>
+          <Image src={open ? "/assets/freeRoomsLogo.png" : "/assets/freeroomsDoorClosed.png"} alt="Freerooms Logo" width={50} height={50} onClick={() => setOpen(!open)} />
+          <span className="font-logo font-semibold hidden sm:inline">Freerooms</span>
         </div>
 
         <div className="flex gap-2">
