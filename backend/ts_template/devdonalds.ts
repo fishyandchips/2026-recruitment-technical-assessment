@@ -45,8 +45,16 @@ app.post("/parse", (req:Request, res:Response) => {
 // [TASK 1] ====================================================================
 // Takes in a recipeName and returns it in a form that 
 const parse_handwriting = (recipeName: string): string | null => {
-  // TODO: implement me
-  return recipeName
+  recipeName = recipeName
+    .replace(/[-_]/g, " ")  // Replace - and _
+    .replace(/[^a-zA-Z ]/g, "") // Remove characters that aren't letters or whitespaces
+    .replace(/\s+/g, " ") // Squash multiple whitespaces down to one whitespace
+    .trim() // Remove leading and trailing whitespace
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalise first letter of each word
+    .join(" ");
+
+  return recipeName.length > 0 ? recipeName : null;
 }
 
 // [TASK 2] ====================================================================
