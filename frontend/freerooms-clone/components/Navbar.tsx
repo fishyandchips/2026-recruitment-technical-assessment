@@ -25,10 +25,6 @@ export default function Navbar() {
           </button>
 
           <button className="flex aspect-square w-auto h-full justify-center items-center rounded-sm border border-[#EF6C00]/50 hover:bg-[#EF6C00]/5 hover:border-[#EF6C00] cursor-pointer transition-all duration-300 ease-in-out">
-            <span className="material-symbols-filled text-[#EF6C00] text-[1.5rem]">door_open</span>
-          </button>
-
-          <button className="flex aspect-square w-auto h-full justify-center items-center rounded-sm border border-[#EF6C00]/50 hover:bg-[#EF6C00]/5 hover:border-[#EF6C00] cursor-pointer transition-all duration-300 ease-in-out">
             <span className="material-symbols-filled text-[#EF6C00] text-[1.5rem]">map</span>
           </button>
 
